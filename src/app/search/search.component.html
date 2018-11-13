@@ -1,0 +1,29 @@
+<div class="row fixed">
+  <div class="col-sm-12 fixed">
+    <div class="bg-outline-primary">
+      <input class="form-control" placeholder="type-something.." type="text" [(ngModel)]="filterText">
+    </div>
+  </div>
+
+</div>
+<hr>
+<div class="row fixed scrollbar scrollbar-primary">
+  <div class="col">
+    <div class="row">
+
+      <div class="col-sm-12" style=" overflow-y: scroll; height: 300;">
+        <app-word [filterText]="filterText" (onSetDescription)="onSetDescription($event)"></app-word>
+
+      </div>
+      <div class="col-sm-12">
+        <app-word-description [wordDescription]="wordDescription"></app-word-description>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-1 fixed">
+    <app-right-bar (onLetterClicked)="onLetterClicked($event)"></app-right-bar>
+  </div>
+  <button class="btn btn-success" (click)="swalInterval.show()">The internal</button>
+  <swal #swalInterval title="The Internet?" text="Bu bir sweet swal" type="question"></swal>
+</div>
