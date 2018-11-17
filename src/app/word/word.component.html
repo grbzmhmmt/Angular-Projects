@@ -3,7 +3,7 @@
   <div class="container">
     <ul class="group-list">
       <li class="group-list-item" *ngFor="let word of words | wordFilter:filterText" style="list-style-type: none">
-        <a href="#" (click)="setDescription(word.wordDescription)" value="word.wordName"> <strong>{{word.wordName}}</strong></a>
+        <a href="#" (click)="setWord(word)" style="color: black ; font-style: italic" > <strong>{{word.wordName}}</strong></a>
       </li>
     </ul>
   </div>

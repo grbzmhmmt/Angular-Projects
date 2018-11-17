@@ -4,26 +4,34 @@
       <input class="form-control" placeholder="type-something.." type="text" [(ngModel)]="filterText">
     </div>
   </div>
+  
+  
+  <div *ngIf="filterText?.length>0; else setfilterCharA ">
+      <h1>{{filterText.substring(0,1).toLocaleUpperCase()}}</h1>
+    </div>
+  <ng-template #setfilterCharA>
+    <div>
+      <h1>A</h1>
+    </div>
+  </ng-template>
 
 </div>
-<hr>
-<div class="row fixed scrollbar scrollbar-primary">
-  <div class="col">
+<div class="row fixed">
+  <div class="col-11">
     <div class="row">
 
-      <div class="col-sm-12" style=" overflow-y: scroll; height: 300;">
-        <app-word [filterText]="filterText" (onSetDescription)="onSetDescription($event)"></app-word>
+      <div class="col-sm-12">
 
+        <app-word [filterText]="filterText" (onSetWord)="onSetWord($event)"></app-word>
+        <br><br>
       </div>
       <div class="col-sm-12">
-        <app-word-description [wordDescription]="wordDescription"></app-word-description>
+        <app-word-description [filterText]="filterText"></app-word-description>
       </div>
     </div>
   </div>
-
-  <div class="col-sm-1 fixed">
+<hr>
+  <div class="col-1 fixed">
     <app-right-bar (onLetterClicked)="onLetterClicked($event)"></app-right-bar>
   </div>
-  <button class="btn btn-success" (click)="swalInterval.show()">The internal</button>
-  <swal #swalInterval title="The Internet?" text="Bu bir sweet swal" type="question"></swal>
 </div>

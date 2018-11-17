@@ -11,7 +11,7 @@ export class WordFilterPipe implements PipeTransform {
     filterText = filterText ? filterText.toLocaleLowerCase() : null;
 
     return filterText ? value.filter( (w: Word) => w.wordName.toLocaleLowerCase().startsWith(filterText.substring(0, 1))
-                                               && w.wordName.toLocaleLowerCase().indexOf(filterText)!==-1 ) : value;
+                                               && w.wordName.toLocaleLowerCase().indexOf(filterText)!==-1 ).slice(0,15) : value.slice(0,15);
   }
 
 }

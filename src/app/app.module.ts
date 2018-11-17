@@ -11,6 +11,7 @@ import { WordService } from './word/word.service';
 import { RightBarComponent } from './right-bar/right-bar.component';
 import { WordDescriptionComponent } from './word-description/word-description.component';
 import { UsersComponent } from './users/users/users.component';
+import { WordDescriptionPipe } from './word/word-description.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UsersComponent } from './users/users/users.component';
     WordFilterPipe,
     RightBarComponent,
     WordDescriptionComponent,
-    UsersComponent
+    UsersComponent,
+    WordDescriptionPipe
   ],
   imports: [
     BrowserModule,

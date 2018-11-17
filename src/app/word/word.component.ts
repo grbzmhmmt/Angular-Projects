@@ -12,8 +12,8 @@ export class WordComponent implements OnInit {
 
   words: Word[];
   @Input() filterText: string;
-  @Output() onSetDescription: EventEmitter<any> = new EventEmitter();
-
+  @Output() onSetWord: EventEmitter<any> = new EventEmitter();
+  
   constructor(private wordService: WordService) { }
 
   ngOnInit() {
@@ -24,7 +24,8 @@ export class WordComponent implements OnInit {
     this.words = this.wordService.getWords();
   }
 
-  setDescription(value: string) {
-    this.onSetDescription.emit(value);
+  setWord(value: any) {
+   // console.log(value.wordName);
+    this.onSetWord.emit(value);
   }
 }

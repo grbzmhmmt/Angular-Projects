@@ -9,19 +9,20 @@ import { WordList } from '../word/word-list.mock';
 })
 export class WordDescriptionComponent implements OnInit {
 
-  constructor() { }
-  words:Word[];
-  @Input() wordDescription:string;
+  words: Word[];
+  @Input() filterText: string;
 
+
+  constructor() { }
   ngOnInit() {
 
     this.getWords();
   }
 
-getWords(){
-  this.words=WordList;
+  getWords() {
+    this.words = WordList;
 
-}
+  }
 
 
 

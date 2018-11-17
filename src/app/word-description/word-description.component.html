@@ -1,7 +1,15 @@
 <hr>
 <div class="col-sm-12 alert alert-secondary" style="height: 200px;">
-  <h2 *ngIf="wordDescription">Description</h2>
-  <p>
-    {{wordDescription }}
-  </p>
+
+  <ul>
+
+    <li *ngFor="let word of words | getWordDescription :filterText">
+      <h2>Description -- {{word.wordName}}</h2>
+      <hr>
+      <p>
+        {{word.wordDescription}}
+      </p>
+    </li>
+  </ul>
+
 </div>

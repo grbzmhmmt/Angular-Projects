@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, DoCheck } from '@angular/core';
-import swal from 'sweetalert2';
-
+import { Word } from '../word/word';
 
 @Component({
   selector: 'app-search',
@@ -10,18 +9,23 @@ import swal from 'sweetalert2';
 export class SearchComponent implements OnInit {
   
   filterText:string;
-  wordDescription:string;
+  word:Word;
+  filterChar:string;
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   onLetterClicked(event: any){
     this.filterText = event;
+    this.filterChar=this.filterText.substring(0,1);
   }
 
-  onSetDescription(event:any){
-    this.wordDescription=event;
+  onSetWord(event:any){
+    this.word=event;
+    console.log(event.wordName);
+    this.filterText=this.word.wordName;
+    this.filterChar=this.word.wordName.substring(0,1);
   }
 
 }
