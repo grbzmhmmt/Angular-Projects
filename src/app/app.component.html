@@ -1,16 +1,27 @@
-
 <div style="text-align:center ">
   <h1 class="page page-header alert alert-info">
     {{ title }}
-  </h1> 
+  </h1>
 </div>
-<div class="container" style=" position: relative">
+
+<div class="container">
   <div class="row">
-    <div class="col-sm-12" >
-      <app-search></app-search>
+    <div class="col-6 offset-3">
+        <a [routerLink]="['/dictionary']"> <button type="button" class="btn btn-primary col-3">Dictionary</button></a>
+        <a [routerLink]="['/posts']"> <button type="button" class="btn btn-secondary col-3">Posts</button></a>
+        <a [routerLink]="['/quintessential']"> <button type="button" class="btn btn-success col-3">Quintessential</button></a>
+        <a [routerLink]="['/spinner']"> <button type="button" class="btn btn-danger col-3">Spinner</button></a>
     </div>
-    
   </div>
 </div>
 
-<router-outlet></router-outlet>
+<hr>
+<div class="container" style=" position: relative">
+  <div class="row">
+    <div class="col-sm-12">
+
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</div>
