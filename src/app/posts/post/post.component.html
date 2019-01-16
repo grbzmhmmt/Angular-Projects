@@ -1,0 +1,8 @@
+<div>
+  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let post of this.posts">
+      <h3>{{post.title}}</h3>
+    </li>
+  </ul>
+</div>

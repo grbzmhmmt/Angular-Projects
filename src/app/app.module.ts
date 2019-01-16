@@ -4,19 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WordComponent } from './word/word.component';
-import { SearchComponent } from './search/search.component';
-import { WordFilterPipe } from './word/word-filter.pipe';
-import { WordService } from './word/word.service';
-import { RightBarComponent } from './right-bar/right-bar.component';
-import { WordDescriptionComponent } from './word-description/word-description.component';
-import { UsersComponent } from './users/users/users.component';
-import { WordDescriptionPipe } from './word/word-description.pipe';
-import { PostComponent } from './post/post.component';
-import { QuintessentialComponent } from './quintessential/quintessential.component';
+import { WordComponent } from './dictionary/word/word.component';
+import { SearchComponent } from './dictionary/search/search.component';
+import { WordFilterPipe } from './dictionary/word/word-filter.pipe';
+import { WordService } from './dictionary/word/word.service';
+import { RightBarComponent } from './dictionary/right-bar/right-bar.component';
+import { WordDescriptionComponent } from './dictionary/word-description/word-description.component';
+import { WordDescriptionPipe } from './dictionary/word/word-description.pipe';
+import { PostComponent } from './posts/post/post.component';
+import { QuintessentialComponent } from './quintessentials/quintessential/quintessential.component';
 import { Routes, RouterModule } from '@angular/router';
 import { SpinnerComponent } from './spinner/spinner.component';
-
+import { Ng4LoadingSpinnerService, Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: 'dictionary', component: SearchComponent },
@@ -35,7 +35,6 @@ const routes: Routes = [
     WordFilterPipe,
     RightBarComponent,
     WordDescriptionComponent,
-    UsersComponent,
     WordDescriptionPipe,
     PostComponent,
     QuintessentialComponent,
@@ -44,10 +43,12 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    Ng4LoadingSpinnerModule.forRoot(),
+    RouterModule.forRoot(routes),
   ],
-  providers: [WordService],
+  providers: [WordService,Ng4LoadingSpinnerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,14 +1,21 @@
+<div style="text-align:center ">
+  <h1 class="page page-header alert alert-info">
+    {{ title }}
+  </h1>
+</div>
+
+
 <div class="row fixed">
   <div class="col-sm-12 fixed">
     <div class="bg-outline-primary">
       <input class="form-control" placeholder="type-something.." type="text" [(ngModel)]="filterText">
     </div>
   </div>
-  
-  
+
+
   <div *ngIf="filterText?.length>0; else setfilterCharA ">
-      <h1>{{filterText.substring(0,1).toLocaleUpperCase()}}</h1>
-    </div>
+    <h1>{{filterText.substring(0,1).toLocaleUpperCase()}}</h1>
+  </div>
   <ng-template #setfilterCharA>
     <div>
       <h1>A</h1>
@@ -30,7 +37,7 @@
       </div>
     </div>
   </div>
-<hr>
+  <hr>
   <div class="col-1 fixed">
     <app-right-bar (onLetterClicked)="onLetterClicked($event)"></app-right-bar>
   </div>
