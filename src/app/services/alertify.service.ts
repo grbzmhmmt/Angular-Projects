@@ -24,8 +24,5 @@ export class AlertifyService {
     alertify.error(post.title);
   }
 
-  info(post:Post){
-    alertify.info(post.title)
-  }
 
 }
