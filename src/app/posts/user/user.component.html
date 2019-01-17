@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <li class="p-1" style="list-style-type: none" (click)="onSetUserPosts(null)">
+      <span class="btn badge badge-primary">All</span>
+    </li>
+    <ul class="p-1" style="list-style-type: none" *ngFor="let user of users">
+      <li (click)="onSetUserPosts(user)">
+        <span class="btn badge badge-primary">{{user.name}}</span>
+      </li>
+    </ul>
+  </div>
+</div>

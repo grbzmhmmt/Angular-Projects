@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, DoCheck } from '@angular/core';
+import { Component, OnInit, Input, DoCheck, ViewChild } from '@angular/core';
 import { Word } from '../word/word';
+import { PostComponent } from 'src/app/posts/post/post.component';
 
 @Component({
   selector: 'app-search',
@@ -15,7 +16,8 @@ export class SearchComponent implements OnInit {
   
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+   }
 
   onLetterClicked(event: any){
     this.filterText = event;

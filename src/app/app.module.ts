@@ -17,6 +17,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { Ng4LoadingSpinnerService, Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { HttpClientModule } from '@angular/common/http';
+import { UserComponent } from './posts/user/user.component';
+import { PostFilterWithUserPipe } from './pipes/post-filter-with-user.pipe';
+import { PostFilterWithTextPipe } from './pipes/post-filter-with-text.pipe';
+import { from } from 'rxjs';
+import { AlertifyService } from './services/alertify.service';
+import { PokemonComponent } from './pokemons/pokemon/pokemon.component';
+
 
 const routes: Routes = [
   { path: 'dictionary', component: SearchComponent },
@@ -38,7 +45,11 @@ const routes: Routes = [
     WordDescriptionPipe,
     PostComponent,
     QuintessentialComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    UserComponent,
+    PostFilterWithUserPipe,
+    PostFilterWithTextPipe,
+    PokemonComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +57,9 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule,
     Ng4LoadingSpinnerModule.forRoot(),
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes)
   ],
-  providers: [WordService,Ng4LoadingSpinnerService],
+  providers: [WordService,Ng4LoadingSpinnerService,AlertifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

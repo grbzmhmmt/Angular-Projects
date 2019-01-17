@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { PostComponent } from './posts/post/post.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
+@ViewChild(PostComponent) postComponentChild:PostComponent;
+
+  ngOnInıt(){
+    this.postComponentChild.getPosts();
+  }
 }

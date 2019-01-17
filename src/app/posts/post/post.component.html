@@ -1,8 +1,11 @@
+<app-user (userEmit)="userEmit($event)"></app-user>
 <div>
-  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+  <input class="form-control mr-sm-2" [(ngModel)]="postFilterText" type="search" placeholder="Search" aria-label="Search">
   <ul class="list-group">
-    <li class="list-group-item" *ngFor="let post of this.posts">
+    <li class="list-group-item" *ngFor="let post of (this.posts|postFilterWithUser:this.userId  | postFilterWithText:postFilterText)">
       <h3>{{post.title}}</h3>
+
+      <p>{{post.body}} <span (click)="AddToFavorite(post)" class="btn badge badge-success">Add To Favorite</span></p>
     </li>
   </ul>
 </div>
