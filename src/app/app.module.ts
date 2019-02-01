@@ -23,11 +23,11 @@ import { PostFilterWithTextPipe } from './pipes/post-filter-with-text.pipe';
 import { from } from 'rxjs';
 import { AlertifyService } from './services/alertify.service';
 import { PokemonComponent } from './pokemons/pokemon/pokemon.component';
-
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 const routes: Routes = [
   { path: 'dictionary', component: SearchComponent },
-  { path: '', redirectTo: 'dictionary', pathMatch: 'full' },
+  { path: '', redirectTo: 'post', pathMatch: 'full' },
   { path: 'posts', component: PostComponent },
   { path: 'quintessential', component: QuintessentialComponent },
   { path: 'spinner', component: SpinnerComponent }
@@ -57,7 +57,8 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule,
     Ng4LoadingSpinnerModule.forRoot(),
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    SweetAlert2Module.forRoot()
   ],
   providers: [WordService,Ng4LoadingSpinnerService,AlertifyService],
   bootstrap: [AppComponent]

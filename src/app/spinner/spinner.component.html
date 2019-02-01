@@ -1,6 +1,35 @@
 <h1>Welcome to {{spinnerName}}</h1>
 
-<ng4-loading-spinner [threshold]="2000" [timeout]="4000" [template]="template" [loadingText]="'Please wait...'" [zIndex]="9999"></ng4-loading-spinner>
+<!-- <ng4-loading-spinner [threshold]="2000" [class]="deneme" [timeout]="4000" [template]="template" [loadingText]="'Please wait...'" [zIndex]="9999"></ng4-loading-spinner>
+
+<ng4-loading-spinner></ng4-loading-spinner>
+ -->
+ 
+ <button [swal]="s011412" class="btn demo">01.1.4.1.2_Dashboard-emiriptal_Dt</button>
 
 
-
+<swal
+  #s011412
+  width="576px"
+  [showConfirmButton]="false"
+  [showCancelButton]="true"
+  cancelButtonClass="close-modal"
+  cancelButtonText=""
+  [showCancelButton]="true"
+  [animation]="false"
+  [buttonsStyling]="false">
+  <div *swalPartial  class="exchange-modal">
+    <div class="exchange-modal-header">
+        <div class="header-title">USD/CAD</div>
+        <div class="header-desc">Amerikan Doları / Kanada Doları</div>
+        <div class="modal-close" aria-label="Kapat"><i class="icon-close-thing"></i></div>
+    </div>
+    <div class="exchange-modal-content question">
+        <div class="question-title">Emiri iptal etmek istediğinize emin misiniz?</div>
+        <div class="question-answer">
+            <a href="#" class="ex-btn cancel modal-close">VAZGEÇ</a>
+            <a href="#" class="ex-btn modal-success">EVET</a>
+        </div>
+    </div>
+  </div>
+</swal>

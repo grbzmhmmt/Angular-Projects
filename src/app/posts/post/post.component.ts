@@ -29,14 +29,14 @@ export class PostComponent implements OnInit {
   }
 
   AddToFavorite(post: Post) {
-    this.random = Math.floor(Math.random() * (4)) + 1;
-    if (this.random == 2) {
+    this.random = Math.floor(Math.random() * (3)) + 1;
+    if (this.random == 1) {
 
       this.alertifyService.error(post);
-    } else if (this.random == 3) {
+    } else if (this.random == 2) {
 
       this.alertifyService.warning(post);
-    } else if (this.random == 4) {
+    } else if (this.random == 3) {
 
       this.alertifyService.success(post);
     }
