@@ -13,7 +13,6 @@ export class SearchComponent implements OnInit {
   word:Word;
   filterChar:string;
   title = 'Dictionary';
-  
   constructor() { }
 
   ngOnInit() {

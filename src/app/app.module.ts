@@ -27,7 +27,7 @@ import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 const routes: Routes = [
   { path: 'dictionary', component: SearchComponent },
-  { path: '', redirectTo: 'post', pathMatch: 'full' },
+  { path: '', redirectTo: 'dictionary', pathMatch: 'full' },
   { path: 'posts', component: PostComponent },
   { path: 'quintessential', component: QuintessentialComponent },
   { path: 'spinner', component: SpinnerComponent }
