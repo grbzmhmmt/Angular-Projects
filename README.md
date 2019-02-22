@@ -34,6 +34,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Run Project
  Download this project and open Atom, Sublimetext, VS Code and etc.
+ 
  Open command line.
+ 
  run npm install.
+ 
  run ng serve --open.
