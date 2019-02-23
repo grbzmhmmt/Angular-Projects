@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, DoCheck, ViewChild } from '@angular/core';
 import { Word } from '../word/word';
 import { PostComponent } from 'src/app/posts/post/post.component';
+import { DictionaryService } from 'src/app/services/dictionary.service';
 
 @Component({
   selector: 'app-search',
@@ -13,10 +14,18 @@ export class SearchComponent implements OnInit {
   word:Word;
   filterChar:string;
   title = 'Dictionary';
-  constructor() { }
+  constructor(private dictionaryService:DictionaryService) { }
 
   ngOnInit() {
-   }
+
+
+  }
+
+    /*this.dictionaryService.setCaptionEmitter.subscribe(value=>{
+      this.filterText = value;
+      this.filterChar=this.filterText.substring(0,1);  
+    });
+*/
 
   onLetterClicked(event: any){
     this.filterText = event;
